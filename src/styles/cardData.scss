@@ -1,0 +1,43 @@
+.title {
+  font-size: 1.6em;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 1em;
+}
+
+.info {
+  font-size: 0.7em;
+  padding-top: 1em;
+}
+
+.title, .subtitle, .info {
+  color: #fff;
+}
+
+
+emoji-slider.inactive {
+  filter: grayscale(0.8);
+}
+
+.requiredLabel {
+  color: red;
+  font-size: 0.8rem;
+}
+
+.splitInputs {
+  display: flex; 
+  width: 100%;
+  input {
+    width: 100%;
+    padding: 1em;
+    margin: 1em;
+    font-size: 1rem;
+  }
+}
+
+.closing {
+  padding-bottom: 1em;
+}
+

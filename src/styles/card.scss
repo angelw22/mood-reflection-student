@@ -1,0 +1,211 @@
+.cardBody {
+  box-shadow: -1px 7px 27px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  background-color: #fff;
+  margin: auto;
+  position: relative;
+  // margin-top: 10%;
+  font-size: 18px;
+  line-height: 1.6;
+  height: auto;
+
+  &.start {
+    background-color: rgb(0, 124, 226);
+    text-align: center;
+  }
+
+  .cardButtons {
+    span {
+      font-weight: 600;
+    }
+  }
+}
+
+.question {
+  color: rgb(50,50,50)
+}
+
+.description {
+  color: rgb(124,124,124);
+  padding-bottom: 1rem;
+}
+
+.cardContents {
+  padding: 1.5em 2.4em 0.7em;
+}
+
+.cardWrapper {
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+
+.cardButtons {
+  background-color: #9dc83b;
+  border-radius: 0 0 6px 6px;
+  display: flex;
+
+  .buttons {
+    width: 50%;
+    color: #fff;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+    padding: 1em 2em;
+    cursor: pointer;
+
+    &.right {
+      text-align: right;
+      border-left: 0.5px solid rgba(255, 255, 255, 0.1);
+      &::after {
+        content: "";
+        width: 1.2em;
+        height: 0.7em;
+        display: inline-block;
+        background-size: 1.15em;
+        background-position: right;
+        position: relative;
+        background-repeat: no-repeat;
+        top: 1px;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='16'%3e%3cg fill='none' fill-rule='evenodd' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3e%3cpath d='M1.7797 8.0199h20.9252l-6.2016 6.2016'/%3e%3cpath d='M16.806 1.308l5.8236 6.5842-2.9118 3.0499'/%3e%3c/g%3e%3c/svg%3e");
+        right: -0.7em;
+      }
+      &.inactive {
+        cursor: not-allowed;
+        opacity: 0.3;
+      }
+    }
+
+    &.left {
+      &::before {
+        content: "";
+        width: 1.2em;
+        height: 0.7em;
+        display: inline-block;
+        background-size: 1.15em;
+        position: relative;
+        top: 1px;
+        background-position: right center;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='16'%3e%3cg fill='none' fill-rule='evenodd' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3e%3cpath d='M22.2203 8.0199H1.2951l6.2016 6.2016'/%3e%3cpath d='M7.194 1.308L1.3704 7.8922l2.9118 3.0499'/%3e%3c/g%3e%3c/svg%3e");
+        right: 0.7em;
+      }
+    }
+  }
+}
+
+.emojiBox {
+  font-size: 0.8em;
+  color: rgb(51, 51, 51);
+  justify-content: space-between;
+  padding: 1em;
+}
+
+
+emoji-slider {
+  cursor: pointer;
+}
+
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .cardBody {
+    margin: 5%;
+    height: 100%;
+    top: 0; 
+    transform: none;
+    overflow: hidden;
+    &.start {
+      margin: 0%;
+      height: 100%;
+    }
+    .cardContents {    
+      overflow-y: scroll;
+      text-align: center;
+      padding: 1.2em 1em 0.7em
+    }
+  }
+  .question {
+    font-size: 21px 
+  }
+  .description {
+    font-size: 16px;
+  }
+
+  .emojiBox {
+    display:block;
+    emoji-slider {
+      width: 80%;
+      padding: 0 10%;
+    }
+  }
+  .cardButtons {
+    display: none;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .cardBody {
+    max-width: 900px; 
+    width: 90%;
+    // margin-top: 15%;
+  }
+  
+  .question {
+    font-size: 1.2em 
+  }
+  .description {
+    font-size: 0.75em;
+  }
+
+  .emojiBox {
+    display: flex;
+    emoji-slider {
+      width: 80%;
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .cardBody {
+    max-width: 900px; 
+  }
+
+  .question {
+    font-size: 1.4em 
+  }
+  .description {
+    font-size: 0.9em;
+  }
+  .emojiBox {
+    display: flex;
+    emoji-slider {
+      width: 80%;
+    }
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+
+
+
