@@ -72,7 +72,7 @@ export const One = props => {
       references.calmness.current.value = data.calmness;
       references.anxiousness.current.value = data.anxiousness
     }
-  }, [props, data, references])
+  }, [data])
 
 
   return (
@@ -92,6 +92,7 @@ export const One = props => {
 
 export const Two = props => {
   const [data, setData] = useState(props.pageStatus[2] || EditorState.createEmpty())
+  var editor = null;
 
   useEffect(() => {
     props.updatePageStatus(2, data)
