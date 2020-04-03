@@ -40,7 +40,8 @@ const Form = () => {
         organisedData.push(item);
       }
     }
-    organisedData.shift();
+    organisedData[0] = new Date();
+
 
     return organisedData;
   }
@@ -48,7 +49,7 @@ const Form = () => {
   async function sendData(data) {
     try {
       let response = await fetch(
-        "https://mood-reflection.cf/api/upload",
+        "https://mood-reflection/api/upload",
         {
           method: "POST", 
           headers: {

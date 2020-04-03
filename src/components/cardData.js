@@ -43,19 +43,31 @@ export const One = props => {
       ...data,
       [e.target.id]: e.target.value
     })
-
-    let emotion = e.target.id
-    let emotionref = references[emotion].current
-    if (emotionref.value < 0.25) {
-      emotionref.emoji = emojis[emotion][0];
-    } else if (emotionref.value < 0.5) {
-      emotionref.emoji = emojis[emotion][1];
-    } else if (emotionref.value < 0.75) {
-      emotionref.emoji = emojis[emotion][2];
-    } else {
-      emotionref.emoji = emojis[emotion][3];
-    }
+    setEmojis(e.target.id)
   };
+
+  const setEmojis = (scope) => {
+    if (scope === "all") {
+      for (var key in data) {
+        loopThroughEmojis(key, references[key].current)
+      }
+    }
+    else {
+      loopThroughEmojis(scope, references[scope].current)
+    }
+  } 
+
+  const loopThroughEmojis = (emotion, ref) => {
+    if (ref.value < 0.25) {
+      ref.emoji = emojis[emotion][0];
+    } else if (ref.value < 0.5) {
+      ref.emoji = emojis[emotion][1];
+    } else if (ref.value < 0.75) {
+      ref.emoji = emojis[emotion][2];
+    } else {
+      ref.emoji = emojis[emotion][3];
+    }
+  }
 
   useEffect(() => {
     if (data.anger !== null && 
@@ -71,6 +83,7 @@ export const One = props => {
       references.sadness.current.value = data.sadness;
       references.calmness.current.value = data.calmness;
       references.anxiousness.current.value = data.anxiousness
+      setEmojis("all");
     }
   }, [data])
 
