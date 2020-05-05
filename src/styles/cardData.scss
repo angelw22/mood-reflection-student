@@ -26,16 +26,18 @@ emoji-slider.inactive {
   font-size: 0.8rem;
 }
 
-.splitInputs {
-  display: flex; 
+input[type=text] {
+  padding: 1em;
+  margin: 1em;
+  font-size: 1rem;
   width: 100%;
-  input {
-    width: 100%;
-    padding: 1em;
-    margin: 1em;
-    font-size: 1rem;
-  }
 }
+
+.inputContainer {
+  display: flex; 
+}
+
+
 
 .closing {
   padding-bottom: 1em;

@@ -49,7 +49,7 @@ const Form = () => {
   async function sendData(data) {
     try {
       let response = await fetch(
-        "http://mood-reflection.cf/api/upload",
+        "https://mood-reflection.cf/api/upload",
         {
           method: "POST", 
           headers: {

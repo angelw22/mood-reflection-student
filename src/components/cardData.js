@@ -139,44 +139,56 @@ export const Three = props => {
 export const Four = props => {
   const [data, setData] = useState(typeof props.pageStatus[4] === 'boolean' ? '' : props.pageStatus[4])
 
-  const updateField = e => {
-    setData(e.target.value)
-    props.updatePageStatus(4, e.target.value || true)
+  const change = e => {
+    if (e.target.value > 0 && e.target.value < 50 || e.target.value == '') {
+      setData(e.target.value)
+      props.updatePageStatus(4, e.target.value || true)
+    }
+    else {
+      props.updatePageStatus(4, e.target.value || false)
+    }
   }
 
   return (
     <div>
       <div className="question">Care to let us know who you are?</div>
       <div className="description">You can indicate your index number in the space below if you will like me to know who you are. This is completely optional but it will certainly help. :)</div>
-      <div className="splitInputs"><input type="text" placeholder="Index number" onChange={updateField} value={data}></input></div>
+      <div className="inputContainer"><input type="text" placeholder="e.g. 1 - 49" onChange={change} value={data}></input></div>
     </div>
   )
 }
 
 export const Five = props => {
-  const [data, setData] = useState("")
+  const [data, setData] = useState(typeof props.pageStatus[4] === 'boolean' ? '' : props.pageStatus[5])
 
   const change = (e) => {
-    setData(e.target.value)
-  }
-
-  useEffect(() => { 
-    if (data) {
+    if (/^[A-Za-z]{2}\d{3}$/.test(e.target.value)) {
+      console.log('right string!!')
+      setData(e.target.value)
       props.updatePageStatus(5, data);
     }
     else {
+      setData(e.target.value)
+      console.log('wrong string!!!')
       props.updatePageStatus(5, false);
     }
-  }, [data])
+  }
 
   return (
     <div>
-      <div className="question">Which class are you from? <span className="requiredLabel">* required</span></div>
-      <select id="classes" onChange={change} >
+      <div className="question">
+        {/* Which class are you from?  */}
+        Please enter the class code assigned by your teacher: 
+        <span className="requiredLabel">* required</span>
+      </div>
+      <div className="inputContainer">
+        <input type="text" placeholder="e.g. AB001" onChange={change} value={data}></input>
+      {/* <select id="classes" onChange={change} >
         <option value="" defaultValue>Select</option>
         <option value="1e4">1E4</option>
         <option value="2n1">2N1</option>
-      </select>
+      </select> */}
+      </div>
     </div>
   )
 }
