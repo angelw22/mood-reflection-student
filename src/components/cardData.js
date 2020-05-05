@@ -159,7 +159,7 @@ export const Four = props => {
 }
 
 export const Five = props => {
-  const [data, setData] = useState(typeof props.pageStatus[4] === 'boolean' ? '' : props.pageStatus[5])
+  const [data, setData] = useState(typeof props.pageStatus[5] === 'boolean' ? '' : props.pageStatus[5])
 
   const change = (e) => {
     if (/^[A-Za-z]{2}\d{3}$/.test(e.target.value)) {
