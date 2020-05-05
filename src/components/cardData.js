@@ -179,8 +179,9 @@ export const Five = props => {
       <div className="question">
         {/* Which class are you from?  */}
         Please enter the class code assigned by your teacher: 
-        <span className="requiredLabel">* required</span>
+        <span className="requiredLabel"> * required</span>
       </div>
+      <div className="description">Please check with your teacher if you are unsure.</div>
       <div className="inputContainer">
         <input type="text" placeholder="e.g. AB001" onChange={change} value={data}></input>
       {/* <select id="classes" onChange={change} >
