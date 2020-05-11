@@ -42,6 +42,7 @@ const Form = () => {
     }
     let date = new Date()
     organisedData[0] = date.toString();
+    console.log(organisedData)
 
     return organisedData;
   }

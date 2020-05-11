@@ -142,10 +142,13 @@ export const Four = props => {
   const change = e => {
     if (e.target.value > 0 && e.target.value < 50 || e.target.value == '') {
       setData(e.target.value)
+      console.log('right!', e.target.value);
       props.updatePageStatus(4, e.target.value || true)
     }
     else {
-      props.updatePageStatus(4, e.target.value || false)
+      setData(e.target.value);
+      props.updatePageStatus(4, false)
+      console.log('wrong index', e.target.value)
     }
   }
 
@@ -163,13 +166,13 @@ export const Five = props => {
 
   const change = (e) => {
     if (/^[A-Za-z]{2}\d{3}$/.test(e.target.value)) {
-      console.log('right string!!')
+      console.log('right string!!', e.target.value)
       setData(e.target.value)
-      props.updatePageStatus(5, data);
+      props.updatePageStatus(5, e.target.value);
     }
     else {
       setData(e.target.value)
-      console.log('wrong string!!!')
+      console.log('wrong string!!!', e.target.value)
       props.updatePageStatus(5, false);
     }
   }
