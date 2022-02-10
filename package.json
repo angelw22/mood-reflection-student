@@ -10,7 +10,7 @@
     "draftjs-to-html": "^0.9.1",
     "emoji-slider": "^0.2.0",
     "html-to-text": "^5.1.1",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-draft-wysiwyg": "^1.14.4",
